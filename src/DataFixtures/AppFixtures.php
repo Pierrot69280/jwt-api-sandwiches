@@ -40,7 +40,6 @@ class AppFixtures extends Fixture
             $sandwich->setPrice($faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 10));
             $ingredientsNbr = rand(1,count($ingredients));
             $tempIngredients = $ingredients;
-
             for ($j = 0; $j < $ingredientsNbr; $j++) {
                 $randIndex = array_rand($tempIngredients);
                 $ingredient = $tempIngredients[$randIndex];
