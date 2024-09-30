@@ -6,16 +6,15 @@ use App\Repository\SandwichRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\Serializer;
 
 class SandwichController extends AbstractController
 {
-    #[Route('/sandwich', name: 'app_sandwich')]
+    #[Route('/api/sandwich', name: 'app_sandwich')]
     public function index(SandwichRepository $sandwichRepository): Response
     {
-
         $sandwiches = $sandwichRepository->findAll();
 
-        return $this->json($sandwiches, 200, [], ['groups' => ['sandwichesjson']]);
-
+        return $this->json($sandwiches, 200, [],['groups' => ['sandwichesjson']]);
     }
 }
